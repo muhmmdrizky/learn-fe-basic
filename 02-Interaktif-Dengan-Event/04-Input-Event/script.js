@@ -60,4 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // event onCopy
+  document.getElementById("inputCopy").addEventListener("copy", function () {
+    alert("Anda telah mencopy sesuatu");
+  });
+
+  // event onPaste
+  document.getElementById("inputPaste").addEventListener("paste", function () {
+    alert("Anda telah mem-paste sesuatu");
+  });
 });
