@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menambahkan Event Handler Onclick</title>
+    <title>Menambahkan Event Handler addEventListener()</title>
     <style>
       .contents {
         position: fixed;
@@ -20,6 +20,7 @@
       }
     </style>
   </head>
+
   <body>
     <div class="contents" align="center" hidden>
       <button id="incrementButton">Tekan Aku :)</button>
@@ -33,9 +34,11 @@
         if (document.getElementById("count").innerText == 7) {
           const hiddenMessage = document.createElement("h4");
           hiddenMessage.innerText = "Selamat! Anda menemukan hadiah tersembunyi...";
+
           const image = document.createElement("img");
           image.setAttribute("src", "https://cdn.pixabay.com/photo/2024/02/28/07/42/european-shorthair-8601492_1280.jpg");
           image.setAttribute("width", 400);
+
           const contents = document.querySelector(".contents");
           contents.appendChild(hiddenMessage).appendChild(image);
         }
@@ -46,11 +49,9 @@
         const contents = document.querySelector(".contents");
         contents.removeAttribute("hidden");
       }
-      // Event handler onload
-      document.body.onload = welcome;
 
-      // Event handler onClick
-      document.getElementById("incrementButton").onclick = increment;
+      window.addEventListener("load", welcome);
+      document.getElementById("incrementButton").addEventListener("click", increment);
     </script>
   </body>
 </html>
